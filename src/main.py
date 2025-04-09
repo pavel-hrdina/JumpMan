@@ -1,5 +1,3 @@
-"""Main lol"""
-
 import pygame
 
 

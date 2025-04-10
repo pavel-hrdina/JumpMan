@@ -5,13 +5,11 @@ import pygame
 
 pygame.init()
 
-# --- Constants ---
 WIDTH, HEIGHT = 800, 600
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 
 
-# --- Terrain ---
 class Terrain:
     def __init__(self):
         self.rects = [pygame.Rect(100, 500, 600, 20)]
@@ -24,7 +22,6 @@ class Terrain:
         return self.rects
 
 
-# --- Menu ---
 class Menu:
     def __init__(self):
         self.visible = True
@@ -39,7 +36,6 @@ class Menu:
         return self.visible
 
 
-# --- Character ---
 class Character:
     def __init__(self):
         self.alive = True
@@ -80,7 +76,6 @@ class Character:
                 self.y = rect.top - 60
 
 
-# --- Player ---
 class Player(Character):
     def __init__(self):
         super().__init__()
@@ -92,7 +87,6 @@ class Player(Character):
                 item.collectItem()
 
 
-# --- Enemy ---
 class Enemy(Character):
     def __init__(self):
         super().__init__()
@@ -100,7 +94,6 @@ class Enemy(Character):
         self.y = 400
 
 
-# --- Items ---
 class Items:
     def __init__(self):
         self.itemBounds = pygame.Rect(random.randint(100, 700), 450, 20, 20)
@@ -114,7 +107,6 @@ class Items:
         self.status = False
 
 
-# --- MainGame ---
 class MainGame:
     def __init__(self):
         self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
